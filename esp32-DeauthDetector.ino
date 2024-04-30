@@ -1,8 +1,8 @@
 #include <WiFi.h>
 
 // ! ESP32 Code for detect DEAUTH ATTACKs on YOUR ROUTER with BUZZER !
-BUZZER     -->   ESP32
-BuzzerPin  -->   13
+// BUZZER     -->   ESP32
+// BuzzerPin  -->   13
 
 const int BUZZER_PIN = 13; // Pin, na ktorom je pripojený bzučiak
 
