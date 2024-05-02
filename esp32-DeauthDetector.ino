@@ -5,15 +5,18 @@
 // BuzzerPin  -->   13
 
 const int BUZZER_PIN = 13; // Pin, na ktorom je pripojený bzučiak
+const char* SSID = "YourSSID-OfROuter";
+const char* PASS = "YourPassss";
+
 
 void setup() {
   Serial.begin(115200);
   pinMode(BUZZER_PIN, OUTPUT);
 
-  // Pripoj sa k Wi-Fi sieti
-  WiFi.begin("YourSSID-OfROuter", "YourPassss");
+  // Pripoj sa ku wifi
+  WiFi.begin(SSID, PASS);
 
-  // Počkaj, kým sa pripojíme
+  // Počka kým sa pripojí
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -23,15 +26,15 @@ void setup() {
 }
 
 void loop() {
-  // Ak nie sme pripojený na WiFi sieti
+  // Ak eni pripojený na WiFi siet
   if (!WiFi.isConnected()) {
     Serial.print("ESP32 JE Odpojene asi deauth utokom !");
-    WiFi.begin("YourSSID-OfROuter", "YourPassss");
+    WiFi.begin(SSID, PASS);
     delay(300);
-    // Bzučiak
-    digitalWrite(BUZZER_PIN, HIGH); // Zapni bzučiak
-    delay(500); // Počkaj 0,5 sekundy
-    digitalWrite(BUZZER_PIN, LOW); // Vypni bzučiak
-    delay(500); // Počkaj 0,5 sekundy
+    
+    digitalWrite(BUZZER_PIN, HIGH);
+    delay(500);
+    digitalWrite(BUZZER_PIN, LOW);
+    delay(500);
   }
 }
