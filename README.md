@@ -1,2 +1,3 @@
-# esp32_8266-DeauthDetector
-esp32_8266-DeauthDetector
+# esp32 or esp8266-DeauthDetector
+codes for both devices
+U can try it
